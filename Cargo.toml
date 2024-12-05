@@ -1,0 +1,18 @@
+[package]
+name = "aggregator_sj"
+version = "0.1.0"
+edition = "2021"
+authors = ["Your Name <your.email@example.com>"]
+description = "A cryptocurrency price aggregator"
+
+[dependencies]
+reqwest = { version = "0.12.9", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+lazy_static = "1.4"
+thiserror = "2.0.4"
+colored = "2.0"
+prettytable = "0.10"
