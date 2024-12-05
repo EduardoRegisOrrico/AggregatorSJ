@@ -41,12 +41,10 @@ impl DisplayFormatter {
     }
 
     pub fn format_currency(&self, amount: f64) -> String {
-        match amount {
-            a if a >= 1_000_000_000.0 => format!("${:.2}B", a / 1_000_000_000.0),
-            a if a >= 1_000_000.0 => format!("${:.2}M", a / 1_000_000.0),
-            a if a >= 1_000.0 => format!("${:.2}K", a / 1_000.0),
-            a if a >= 1.0 => format!("${:.2}", a),
-            _ => format!("${:.6}", amount),
+        if amount >= 1.0 {
+            format!("${:.2}", amount)
+        } else {
+            format!("${:.6}", amount)
         }
     }
 
